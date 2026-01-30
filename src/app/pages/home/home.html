@@ -32,6 +32,10 @@
             [src]="idol.src" 
             [alt]="idol.alt"
             class="idol-image"
+            
+            [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+
+            [attr.fetchpriority]="i === 0 ? 'high' : 'auto'"
           >
         </div>
       </div>
