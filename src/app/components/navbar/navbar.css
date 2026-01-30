@@ -1,0 +1,241 @@
+/* --- Base Styles --- */
+:host {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  padding: 1rem 0;
+  background-color: transparent; 
+  color: #333; /* CHANGED: Always dark text, even when transparent */
+}
+
+/* Scrolled state: White background, text remains dark */
+nav.scrolled {
+  background-color: beige;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 3rem);
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* --- Navigation Links (Desktop) --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative; /* Needed for dropdown positioning */
+  padding: 1rem 0; /* Extends hover area */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black; /* Force black text */
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s;
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Rotate chevron on hover */
+.nav-item:hover .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+/* --- Dropdown Menu (Desktop) --- */
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  border-top: 3px solid #f4c804; /* Saffron top border */
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  color: black;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #fff3e0; /* Light saffron hover */
+  color: #f4c804;
+}
+
+/* --- CTA Button --- */
+.cta-btn {
+  background-color: #f4c804;
+  color: black; /* Force white text only for button */
+  padding: 0.6rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #f7d22c;
+}
+
+/* --- Mobile / Responsive --- */
+.mobile-only, .mobile-menu { display: none; }
+
+.mobile-arrow .chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+/* When dropdown is open */
+.mobile-arrow.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 900px) {
+  .mobile-link-header a,
+  .mobile-submenu li a,
+  .mobile-cta {
+    color: #333 !important; /* Force black, overrides browser/Angular */
+    text-decoration: none !important;
+  }
+  
+  .mobile-link-header a:hover,
+  .mobile-submenu li a:hover {
+    color: #c35a3a !important; /* Your hover color */
+  }
+  
+  /* Active/visited states */
+  .mobile-link-header a[routerlinkactive],
+  .mobile-submenu li a[routerlinkactive] {
+    color: #ff5722 !important; /* Saffron for active */
+  }
+}
+
+
+@media (max-width: 900px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333; /* Always black bars */
+  }
+
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-link-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+  }
+
+  .mobile-arrow {
+    padding: 0 1rem;
+    color: #ff5722;
+  }
+
+  .mobile-submenu {
+    background-color: #f9f9f9;
+  }
+
+  .mobile-submenu li a {
+    display: block;
+    padding: 0.8rem 2.5rem; /* Indented */
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .mobile-cta {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: #ff5722;
+    font-weight: bold;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}

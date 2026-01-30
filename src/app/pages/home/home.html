@@ -1,0 +1,55 @@
+<section class="hero-container">
+  <img 
+    src="/hero/mandir.jpg" 
+    alt="Tilak Nagar Hanuman Mandir"
+    class="hero-background"
+  >
+  
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>Hanuman Mandir</h1>
+  </div>
+</section>
+
+<section class="darshan-section">
+  <div class="container">
+    <h2 class="section-title">DARSHAN</h2>
+
+    <div class="carousel-wrapper">
+      
+      <button class="nav-arrow left" (click)="onPrevClick()" aria-label="Previous Idol">
+        &#10094;
+      </button>
+
+      <div class="slides-container">
+        <div 
+          *ngFor="let idol of idols; let i = index" 
+          class="slide-item"
+          [class.active]="i === currentSlideIndex"
+        >
+          <img 
+            [src]="idol.src" 
+            [alt]="idol.alt"
+            class="idol-image"
+          >
+        </div>
+      </div>
+
+      <button class="nav-arrow right" (click)="onNextClick()" aria-label="Next Idol">
+        &#10095;
+      </button>
+
+    </div>
+
+    <div class="dots-container">
+      <span 
+        *ngFor="let idol of idols; let i = index" 
+        class="dot"
+        [class.active]="i === currentSlideIndex"
+        (click)="onDotClick(i)"
+      ></span>
+    </div>
+
+  </div>
+</section>
