@@ -101,8 +101,8 @@
 }
 
 .section-heading {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Great Vibes' , cursive;
+  font-size: 4.5rem;
   color: #4a3b2a;
   margin-bottom: 3rem;
   font-weight: 700;
@@ -124,7 +124,6 @@
   flex-direction: column;
   transition: transform 0.3s ease;
   /* UPDATED: Added rounding and overflow hidden so content doesn't spill out */
-  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(74, 59, 42, 0.15); /* Optional: Soft shadow matches theme */
 }
@@ -165,7 +164,7 @@
   font-size: 1.5rem;
   margin: 0; /* Removed margin-bottom since there is no text below */
   font-weight: 600;
-  color: #f4c804;
+  color: white;
 }
 
 /* ================= RESPONSIVE DESIGN ================= */

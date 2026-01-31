@@ -1,0 +1,280 @@
+/* ... KEEP YOUR EXISTING STYLES FOR THE TOP SECTION ... */
+:host {
+  display: block;
+}
+
+.seva-section {
+  background-color: #f5f5dc;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 100px; 
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1300px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* --- LEFT SIDE --- */
+.text-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-right: 2rem;
+}
+
+.page-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5rem;
+  color: #362416;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.page-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #5d4037;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+.arrow-container {
+  color: #362416;
+  display: flex;       
+  align-items: center; 
+  gap: 1rem;           
+  cursor: pointer;     
+  animation: bounce 2s infinite;
+}
+
+.read-more-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+/* --- RIGHT SIDE: DARK CARD --- */
+.card-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dark-card {
+  background-color: #362416;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(54, 36, 22, 0.25);
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.scheme-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.scheme-item {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: flex-start; 
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(245, 245, 220, 0.1);
+}
+
+.scheme-item:last-child {
+  border-bottom: none;
+}
+
+.scheme-item:hover {
+  background-color: rgba(245, 245, 220, 0.05);
+}
+
+.scheme-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem; 
+  color: beige;    
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.scheme-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(245, 245, 220, 0.8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ================= NEW CONTRIBUTION SECTION ================= */
+
+.contribution-section {
+  background-color: #f5f5dc; /* NOW BEIGE */
+  padding: 5rem 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px; /* Wider to fit grid */
+  width: 100%;
+}
+
+/* --- Header --- */
+.contrib-header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(54, 36, 22, 0.1); /* Dark Brown tint for light bg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #362416; /* Dark Icon */
+}
+
+.contrib-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #362416; /* Dark Title for light bg */
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.contrib-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: #5d4037; /* Brown subtitle */
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+/* --- Rates Grid (Cards) --- */
+.rates-grid {
+  display: grid;
+  /* Responsive Grid: Cards min-width 300px */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.rate-card {
+  background-color: #362416; /* CARD IS DARK BROWN */
+  color: #f5f5dc; /* Text is Beige */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes price to bottom */
+  box-shadow: 0 10px 25px rgba(54, 36, 22, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 250px; /* Uniform height */
+}
+
+.rate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(54, 36, 22, 0.25);
+}
+
+.rate-content {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.rate-service {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: beige; /* Saffron Title */
+  margin-bottom: 1rem;
+}
+
+.rate-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(245, 245, 220, 0.8);
+  line-height: 1.6;
+}
+
+.rate-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(245, 245, 220, 0.2);
+  width: 100%;
+}
+
+.rate-amount {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  color: #f5f5dc;
+  font-weight: 700;
+  text-align: right; /* Price aligned right */
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .text-column {
+    align-items: center; 
+    padding-right: 0;
+  }
+  .dark-card {
+    width: 100%;
+  }
+  
+  .contrib-title {
+    font-size: 2.8rem;
+  }
+  
+  /* Stack grid on very small screens */
+  .rates-grid {
+    grid-template-columns: 1fr;
+  }
+}

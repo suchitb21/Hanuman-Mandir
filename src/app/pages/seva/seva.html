@@ -1,0 +1,71 @@
+<section class="seva-section">
+  <div class="container">
+    
+    <div class="text-column">
+      <h1 class="page-title">Seva Offerings</h1>
+        <p class="page-desc">
+          Devotees who wish to mark their special occasions by performing <strong>Abhishek</strong> for the deities are requested to provide their full name and <strong>Gotra</strong> to the Mandir Guruji in advance.
+        </p>
+        <p class="page-desc">
+          In addition, devotees who wish to support a social cause in remembrance of a loved one may choose to contribute towards a charitable organization. Kindly share the relevant details of the person being remembered with the Mandir authorities.
+        </p>
+        <p class="page-desc">
+          As part of this initiative, <strong>25% of the donated amount</strong> will be directed towards the selected charitable organization, helping extend spiritual observance into meaningful social service.
+        </p>
+
+      <div class="arrow-container">
+        <span class="read-more-text">READ MORE</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-icon lucide-arrow-down">
+          <path d="M12 5v14"/>
+          <path d="m19 12-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card-column">
+      <div class="dark-card">
+        <div class="scheme-list">
+          <div class="scheme-item" *ngFor="let scheme of sevaSchemes">
+            <span class="scheme-title">{{ scheme.title }}</span>
+            <p class="scheme-desc">{{ scheme.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="contribution-section">
+  <div class="container vertical-layout">
+    
+    <div class="contrib-header">
+      <div class="icon-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-coins">
+          <path d="M11 15h2a2 2 0 1 0 0-4h-3c-2 0-3 .5-3 2.5V15h8.5c1.1 0 2.1-.5 2.5-1.5L20 8.5"/>
+          <path d="m10.3 21 1.6-8"/>
+          <circle cx="8" cy="8" r="3"/>
+        </svg>
+      </div>
+      <h2 class="contrib-title">Other Spiritual Seva</h2>
+      <p class="contrib-subtitle">Your support helps us maintain the sanctity and daily operations of the Mandir.</p>
+    </div>
+
+    <div class="rates-grid">
+      <div class="rate-card" *ngFor="let rate of contributionRates">
+        
+        <div class="rate-content">
+          <h3 class="rate-service">{{ rate.service }}</h3>
+          <p class="rate-desc">{{ rate.description }}</p>
+        </div>
+        
+        <div class="rate-footer">
+          <div class="divider"></div>
+          <span class="rate-amount">{{ rate.amount }}</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

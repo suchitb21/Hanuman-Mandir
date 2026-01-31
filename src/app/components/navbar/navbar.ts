@@ -13,18 +13,14 @@ import { filter } from 'rxjs/operators';
 export class Navbar implements OnInit {
   isScrolled = false;
   isMobileMenuOpen = false;
-  
-  // Track if we are on the home page
   private isHomePage = true;
-
-  // Track which dropdown is open on mobile
   activeMobileDropdown: string | null = null;
 
   navLinks = [
     { 
       label: 'FESTIVAL', 
       route: '/festival',
-      children: [
+      children: [ // Has children -> Shows dropdown
         { label: 'HANUMAN JAYANTI', route: '/festival/hanuman-jayanti' },
         { label: 'RAM NAVAMI', route: '/festival/ram-navami' },
         { label: 'MAHA SHIVRATRI', route: '/festival/mahashivratri' },
@@ -36,7 +32,7 @@ export class Navbar implements OnInit {
     { 
       label: 'SERVICES', 
       route: '/services',
-      children: [
+      children: [ // Has children -> Shows dropdown
         { label: 'MEDICAL EQUIPMENTS', route: '/services/me' },
         { label: 'MATRIMONIAL', route: '/services/mm' },
         { label: 'MEDICAL CAMPS', route: '/services/mc' }
@@ -44,19 +40,13 @@ export class Navbar implements OnInit {
     },
     { 
       label: 'TEMPLE RENOVATION', 
-      route: '/temple',
-      children: [
-        { label: 'VISION', route: '/tr/vision' },
-        { label: 'CONTRIBUTE', route: '/tr/contribute' },
-      ]
+      route: '/temple' 
+      // NO children -> Direct link, No arrow
     },
     { 
       label: 'SEVA', 
-      route: '/seva',
-      children: [
-        { label: 'PERSONAL', route: '/seva/online' },
-        { label: 'FAMILY', route: '/seva/bank' },
-      ]
+      route: '/seva' 
+      // NO children -> Direct link, No arrow
     },
     { 
       label: 'ABOUT US', 
@@ -72,10 +62,7 @@ export class Navbar implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // 1. Check current URL immediately on load
     this.checkRoute();
-
-    // 2. Listen for navigation changes to re-check URL
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -83,12 +70,8 @@ export class Navbar implements OnInit {
     });
   }
 
-  // Determine if we are on the home page
   private checkRoute() {
-    // Adjust this string if your home route is different (e.g., '/home')
     this.isHomePage = this.router.url === '/';
-    
-    // Force recalculation of navbar state immediately after route change
     this.updateNavbarState();
   }
 
@@ -97,13 +80,10 @@ export class Navbar implements OnInit {
     this.updateNavbarState();
   }
 
-  // Centralized logic: Combines "Page Location" AND "Scroll Position"
   private updateNavbarState() {
     if (!this.isHomePage) {
-      // RULE 1: If NOT on Home Page, always force the beige background
       this.isScrolled = true;
     } else {
-      // RULE 2: If ON Home Page, only show background if scrolled past 50vh
       const threshold = window.innerHeight * 0.5;
       this.isScrolled = window.scrollY > threshold;
     }
