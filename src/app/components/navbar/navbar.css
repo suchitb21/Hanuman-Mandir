@@ -13,14 +13,17 @@ nav {
   transition: all 0.3s ease-in-out;
   padding: 1rem 0;
   background-color: transparent; 
-  color: #333; /* CHANGED: Always dark text, even when transparent */
+  /* CHANGE 1: Default text color is now WHITE for the transparent state */
+  color: white; 
 }
 
-/* Scrolled state: White background, text remains dark */
+/* --- Scrolled State --- */
 nav.scrolled {
   background-color: beige;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 0.8rem 0;
+  /* CHANGE 2: When scrolled, switch text color back to DARK */
+  color: #333;
 }
 
 .container {
@@ -49,42 +52,48 @@ nav.scrolled {
 }
 
 .nav-item {
-  position: relative; /* Needed for dropdown positioning */
-  padding: 1rem 0; /* Extends hover area */
+  position: relative;
+  padding: 1rem 0;
 }
 
 .nav-link {
   text-decoration: none;
-  color: black; /* Force black text */
+  /* CHANGE 3: Use 'inherit' so it automatically switches from white to black */
+  color: inherit; 
   font-weight: 600;
   font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
-}
-
-.arrow {
-  font-size: 0.7rem;
-  transition: transform 0.3s;
+  transition: color 0.3s ease;
 }
 
 .chevron-icon {
   transition: transform 0.3s ease;
+  /* Ensure the SVG arrow uses the text color */
+  stroke: currentColor; 
 }
 
-/* Rotate chevron on hover */
 .nav-item:hover .chevron-icon {
   transform: rotate(180deg);
 }
 
+/* Hover effect for links */
 .nav-link:hover {
-  color: black;
+  /* You can keep this black or make it saffron. 
+     If background is transparent/dark, maybe make this saffron? */
+  color: #f4c804; 
+}
+
+/* Ensure hover on scrolled state looks good */
+nav.scrolled .nav-link:hover {
+  color: #c35a3a; /* Darker orange/saffron for contrast on beige */
 }
 
 /* --- Dropdown Menu (Desktop) --- */
 .dropdown-menu {
-  display: none; /* Hidden by default */
+  display: none;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -95,10 +104,9 @@ nav.scrolled {
   border-radius: 8px;
   list-style: none;
   padding: 0.5rem 0;
-  border-top: 3px solid #f4c804; /* Saffron top border */
+  border-top: 3px solid #f4c804;
 }
 
-/* Show dropdown on hover */
 .nav-item:hover .dropdown-menu {
   display: block;
   animation: fadeIn 0.2s ease-in-out;
@@ -107,30 +115,33 @@ nav.scrolled {
 .dropdown-menu li a {
   display: block;
   padding: 0.8rem 1.5rem;
-  color: black;
+  /* CHANGE 4: Dropdown is always a white box, so text must always be BLACK */
+  color: black; 
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 400;
   transition: background 0.2s;
   white-space: nowrap;
 }
 
 .dropdown-menu li a:hover {
-  background-color: #fff3e0; /* Light saffron hover */
+  background-color: #fff3e0;
   color: #f4c804;
 }
 
 /* --- CTA Button --- */
 .cta-btn {
-  background-color: #f4c804;
-  color: black; /* Force white text only for button */
+  background-color: #362416;
+  color: white; /* Button text stays black (high contrast on yellow) */
   padding: 0.6rem 1.5rem;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  border-radius: 4px; /* Optional: adds slight rounding */
 }
 
 .cta-btn:hover {
-  background-color: #f7d22c;
+  background-color: #8b5106;
 }
 
 /* --- Mobile / Responsive --- */
@@ -140,49 +151,38 @@ nav.scrolled {
   transition: transform 0.3s ease;
 }
 
-/* When dropdown is open */
 .mobile-arrow.open .chevron-icon {
   transform: rotate(180deg);
 }
 
 @media (max-width: 900px) {
-  .mobile-link-header a,
-  .mobile-submenu li a,
-  .mobile-cta {
-    color: #333 !important; /* Force black, overrides browser/Angular */
-    text-decoration: none !important;
-  }
-  
-  .mobile-link-header a:hover,
-  .mobile-submenu li a:hover {
-    color: #c35a3a !important; /* Your hover color */
-  }
-  
-  /* Active/visited states */
-  .mobile-link-header a[routerlinkactive],
-  .mobile-submenu li a[routerlinkactive] {
-    color: #ff5722 !important; /* Saffron for active */
-  }
-}
-
-
-@media (max-width: 900px) {
   .desktop-only { display: none; }
   .mobile-only { display: block; }
 
+  /* Hamburger Menu Button */
   .hamburger {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 10px;
   }
+  
   .hamburger .bar {
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: #333; /* Always black bars */
+    /* CHANGE 5: Hamburger bars start WHITE */
+    background-color: white; 
+    transition: background-color 0.3s ease;
   }
 
+  /* CHANGE 6: Hamburger bars turn BLACK when scrolled */
+  nav.scrolled .hamburger .bar {
+    background-color: #333;
+  }
+
+  /* Mobile Dropdown Panel */
   .mobile-menu {
     display: block;
     position: absolute;
@@ -209,6 +209,19 @@ nav.scrolled {
     font-weight: 600;
   }
 
+  /* Force mobile menu text to be dark (since background is white) */
+  .mobile-link-header a,
+  .mobile-submenu li a,
+  .mobile-cta {
+    color: #333 !important; 
+    text-decoration: none !important;
+  }
+  
+  .mobile-link-header a:hover,
+  .mobile-submenu li a:hover {
+    color: #c35a3a !important;
+  }
+
   .mobile-arrow {
     padding: 0 1rem;
     color: #ff5722;
@@ -220,7 +233,7 @@ nav.scrolled {
 
   .mobile-submenu li a {
     display: block;
-    padding: 0.8rem 2.5rem; /* Indented */
+    padding: 0.8rem 2.5rem;
     color: #555;
     text-decoration: none;
     border-bottom: 1px solid #eee;

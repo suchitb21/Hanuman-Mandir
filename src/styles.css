@@ -1,5 +1,11 @@
-*{
+/* Remove font-family from here */
+* {
     padding: 0;
     margin: 0;
-    font-family: 'Inter' , sans-serif;
+    box-sizing: border-box; /* Optional but recommended for layout */
+}
+
+/* Apply base font here. This allows overriding! */
+body {
+    font-family: 'Inter', sans-serif;
 }

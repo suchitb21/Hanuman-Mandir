@@ -1,0 +1,37 @@
+<section class="festival-section">
+  <div class="container split-layout">
+    <div class="text-column">
+      <h1 class="festival-title">{{ festivalData.title }}</h1>
+      <h3 class="festival-subtitle">{{ festivalData.subtitle }}</h3>
+      <div class="description-wrapper">
+        <p *ngFor="let para of festivalData.description">"{{ para }}"</p>
+      </div>
+      <div class="signature">- The Temple Committee</div>
+    </div>
+    <div class="image-column">
+      <img [src]="festivalData.image" [alt]="festivalData.imageAlt" class="festival-image">
+    </div>
+  </div>
+</section>
+
+<section class="rituals-section">
+  <div class="container vertical-layout">
+    
+    <h2 class="section-heading">Rituals & Offerings</h2>
+
+    <div class="cards-grid">
+      <div class="card" *ngFor="let card of cardsData">
+        
+        <div class="card-image-wrapper">
+          <img [src]="card.image" [alt]="card.title" class="card-image">
+        </div>
+        
+        <div class="card-content">
+          <h3 class="card-title">{{ card.title }}</h3>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

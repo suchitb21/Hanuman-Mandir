@@ -1,0 +1,198 @@
+:host {
+  display: block;
+  padding-top: 0; 
+}
+
+/* ================= SHARED LAYOUT UTILITIES ================= */
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= SECTION 1: FESTIVAL SPLIT ================= */
+.festival-section {
+  background-color: beige;
+  height: 100vh; 
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.split-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+/* --- Left Side: Text --- */
+.text-column {
+  width: 50%;
+  height: 100%;
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.festival-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: #4a3b2a;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.festival-subtitle {
+  font-family: 'Inter', serif;
+  font-size: 1.2rem;
+  color: #6b5e51;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.description-wrapper p {
+  font-family: 'Inter', serif;
+  font-size: 1.1rem;
+  color: #554a3e;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  border-left: 3px solid #d4c5b0;
+  padding-left: 1.5rem;
+}
+
+.signature {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #4a3b2a;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+/* --- Right Side: Image --- */
+.image-column {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.festival-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= SECTION 2: RITUALS CARDS ================= */
+
+.rituals-section {
+  background-color: beige;
+  padding: 5rem 2rem;
+  min-height: 80vh;
+}
+
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  color: #4a3b2a;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* --- Grid Layout --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* UPDATED: Increased gap from 2rem to 3.5rem for more space */
+  gap: 3.5rem; 
+  width: 100%;
+}
+
+/* --- Individual Card Styling --- */
+.card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  /* UPDATED: Added rounding and overflow hidden so content doesn't spill out */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(74, 59, 42, 0.15); /* Optional: Soft shadow matches theme */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Top */
+.card-image-wrapper {
+  width: 100%;
+  /* UPDATED: Doubled height from 250px to 500px */
+  height: 500px; 
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* Text Bottom */
+.card-content {
+  background-color: #4a3b2a;
+  padding: 1.5rem; /* Reduced padding slightly since there is less text */
+  text-align: center; /* Center the title since it's alone */
+  color: white;
+}
+
+.card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  margin: 0; /* Removed margin-bottom since there is no text below */
+  font-weight: 600;
+  color: #f4c804;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 900px) {
+  /* Stack Layout 1 */
+  .split-layout {
+    flex-direction: column;
+    height: auto;
+  }
+  .text-column, .image-column {
+    width: 100%;
+    height: auto;
+  }
+  .image-column { height: 50vh; order: 1; }
+  .text-column { padding: 3rem 2rem; order: 2; }
+
+  /* Stack Layout 2 (Cards) */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem; /* Keep generous gap on mobile too */
+  }
+  
+  .card-image-wrapper {
+    height: 400px; /* Slightly smaller on mobile so it fits screens */
+  }
+
+  .section-heading {
+    text-align: center;
+  }
+}
