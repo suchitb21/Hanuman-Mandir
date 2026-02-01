@@ -177,74 +177,52 @@ nav.scrolled .nav-link:hover {
     transition: background-color 0.3s ease;
   }
 
-  /* CHANGE 6: Hamburger bars turn BLACK when scrolled */
-  nav.scrolled .hamburger .bar {
-    background-color: #333;
-  }
-
-  /* Mobile Dropdown Panel */
-  .mobile-menu {
+.mobile-menu {
     display: block;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: white;
+    
+    /* CHANGED: From white to beige to match your site theme */
+    background-color: beige; 
+    
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     max-height: 80vh;
     overflow-y: auto;
+    border-top: 1px solid #d4c5b0; /* Optional: adds a subtle separator line */
   }
 
-  .mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
+  /* 2. HEADER LINKS (Main items like "Festival", "Services") */
   .mobile-link-header {
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid #eee;
+    
+    /* CHANGED: Darker border to match beige theme */
+    border-bottom: 1px solid rgba(74, 59, 42, 0.1); 
+    
     font-weight: 600;
   }
 
-  /* Force mobile menu text to be dark (since background is white) */
-  .mobile-link-header a,
-  .mobile-submenu li a,
-  .mobile-cta {
-    color: #333 !important; 
-    text-decoration: none !important;
-  }
-  
-  .mobile-link-header a:hover,
-  .mobile-submenu li a:hover {
-    color: #c35a3a !important;
-  }
-
-  .mobile-arrow {
-    padding: 0 1rem;
-    color: #ff5722;
-  }
-
+  /* 3. SUBMENU (The dropdowns like "Hanuman Jayanti") */
   .mobile-submenu {
-    background-color: #f9f9f9;
+    /* CHANGED: From light grey to a slightly darker beige for contrast */
+    background-color: #ebe5ce; 
   }
 
   .mobile-submenu li a {
     display: block;
     padding: 0.8rem 2.5rem;
-    color: #555;
+    color: #4a3b2a; /* Dark brown text (matches your Hanunam title color) */
     text-decoration: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(74, 59, 42, 0.05);
   }
-  
+
+  /* Ensure text is always dark brown/black on the beige background */
+  .mobile-link-header a,
   .mobile-cta {
-    display: block;
-    text-align: center;
-    padding: 1rem;
-    color: #ff5722;
-    font-weight: bold;
+    color: #4a3b2a !important; 
   }
 }
 

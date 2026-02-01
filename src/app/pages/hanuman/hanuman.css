@@ -1,6 +1,6 @@
 :host {
   display: block;
-  padding-top: 0; 
+  padding-top: 30px; 
 }
 
 /* ================= SHARED LAYOUT UTILITIES ================= */
@@ -113,7 +113,6 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* UPDATED: Increased gap from 2rem to 3.5rem for more space */
   gap: 3.5rem; 
   width: 100%;
 }
@@ -123,7 +122,6 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
-  /* UPDATED: Added rounding and overflow hidden so content doesn't spill out */
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(74, 59, 42, 0.15); /* Optional: Soft shadow matches theme */
 }
@@ -135,9 +133,9 @@
 /* Image Top */
 .card-image-wrapper {
   width: 100%;
-  /* UPDATED: Doubled height from 250px to 500px */
   height: 500px; 
   overflow: hidden;
+  position: relative;
 }
 
 .card-image {
@@ -154,21 +152,32 @@
 /* Text Bottom */
 .card-content {
   background-color: #4a3b2a;
-  padding: 1.5rem; /* Reduced padding slightly since there is less text */
-  text-align: center; /* Center the title since it's alone */
+  padding: 1.5rem;
+  text-align: center;
   color: white;
 }
 
 .card-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
-  margin: 0; /* Removed margin-bottom since there is no text below */
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  margin: 0; 
   font-weight: 600;
   color: white;
 }
 
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 900px) {
+  /* font */
+  .festival-title, 
+  .section-heading {
+    font-size: 3rem; /* Reduced from 4.5rem to fit mobile screens better */
+  }
+  
+  .festival-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   /* Stack Layout 1 */
   .split-layout {
     flex-direction: column;

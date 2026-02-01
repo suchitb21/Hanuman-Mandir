@@ -1,0 +1,416 @@
+/* ... KEEP ALL YOUR EXISTING CAROUSEL STYLES ABOVE ... */
+:host {
+  display: block;
+}
+
+.vision-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #362416; 
+}
+
+/* --- CAROUSEL SLIDES --- */
+.carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; 
+  transition: opacity 1.5s ease-in-out; 
+}
+
+.slide.active {
+  opacity: 1; 
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+/* --- OVERLAY --- */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 2;
+}
+
+/* --- CENTERED TEXT --- */
+.vision-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.vision-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 6rem;
+  margin: 0;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  animation: fadeUp 1s ease-out;
+}
+
+.vision-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  opacity: 0.9;
+  animation: fadeUp 1.2s ease-out;
+}
+
+/* --- NAVIGATION BUTTONS --- */
+.nav-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-buttons button {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.3);
+  color: white;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-buttons button:hover {
+  background-color: white;
+  color: #362416;
+  border-color: white;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================================
+   SECTION 2 - DETAILS (ZIG-ZAG LAYOUT)
+======================================================================== */
+
+.details-section {
+  background-color: #f5f5dc; /* Beige Background */
+  min-height: 100vh;
+  width: 100%;
+  padding: 6rem 1rem;
+  display: flex;
+  flex-direction: column; /* Stack the two container rows */
+  align-items: center;
+  gap: 8rem; /* Vertical Space between the two rows */
+}
+
+.container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.split-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5rem; 
+}
+
+/* --- LEFT/RIGHT COLUMN UTILITIES --- */
+.text-column {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.image-column {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Typography */
+.section-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: #362416; 
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.section-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #5d4037;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 95%;
+}
+
+/* Arrow / Link Container */
+.arrow-container {
+  color: #362416;
+  display: flex;       
+  align-items: center; 
+  gap: 1rem;           
+  cursor: pointer;     
+  transition: transform 0.3s ease;
+}
+
+.arrow-container:hover {
+  transform: translateX(10px); 
+}
+
+.read-more-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Image Wrapper */
+.image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  height: 500px; 
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(54, 36, 22, 0.2); 
+  transition: transform 0.5s ease;
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.image-wrapper:hover .feature-image {
+  transform: scale(1.05); 
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+  
+  /* Reduce gap between rows on mobile */
+  .details-section {
+    gap: 5rem;
+    padding: 4rem 1rem;
+  }
+
+  /* Stack Vertical */
+  .split-layout {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  /* On Mobile, standard is Image First, Text Second. 
+     Since we swapped HTML order for the 2nd row (Image First), 
+     it naturally stacks Image on Top. 
+     For the 1st row (Text First), it stacks Text on Top.
+     If you want consistent Image-Top, we'd use flex-direction: column-reverse 
+     on the first row, but Zig-Zag usually implies mixed stacking is okay or intended.
+  */
+
+  .text-column {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 3.5rem;
+  }
+  
+  .image-wrapper {
+    height: 350px;
+    width: 100%;
+  }
+
+  .vision-title {
+    font-size: 4rem;
+  }
+  .vision-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+
+
+
+/* ================= NEW CONTRIBUTION SECTION ================= */
+
+.contribution-section {
+  background-color: #f5f5dc; /* NOW BEIGE */
+  padding: 5rem 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px; /* Wider to fit grid */
+  width: 100%;
+}
+
+/* --- Header --- */
+.contrib-header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(54, 36, 22, 0.1); /* Dark Brown tint for light bg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #362416; /* Dark Icon */
+}
+
+.contrib-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #362416; /* Dark Title for light bg */
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.contrib-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: #5d4037; /* Brown subtitle */
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+/* --- Rates Grid (Cards) --- */
+.rates-grid {
+  display: grid;
+  /* Responsive Grid: Cards min-width 300px */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.rate-card {
+  background-color: #362416; /* CARD IS DARK BROWN */
+  color: #f5f5dc; /* Text is Beige */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes price to bottom */
+  box-shadow: 0 10px 25px rgba(54, 36, 22, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 250px; /* Uniform height */
+}
+
+.rate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(54, 36, 22, 0.25);
+}
+
+.rate-content {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.rate-service {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: beige; /* Saffron Title */
+  margin-bottom: 1rem;
+}
+
+.rate-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(245, 245, 220, 0.8);
+  line-height: 1.6;
+}
+
+.rate-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(245, 245, 220, 0.2);
+  width: 100%;
+}
+
+.rate-amount {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  color: #f5f5dc;
+  font-weight: 700;
+  text-align: right; /* Price aligned right */
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .text-column {
+    align-items: center; 
+    padding-right: 0;
+  }
+  .dark-card {
+    width: 100%;
+  }
+  
+  .contrib-title {
+    font-size: 2.8rem;
+  }
+  
+  /* Stack grid on very small screens */
+  .rates-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,1 +1,126 @@
-<p>temple works!</p>
+<section class="vision-hero">
+  
+  <div class="carousel-container">
+    <div 
+      class="slide" 
+      *ngFor="let img of templeImages; let i = index"
+      [class.active]="i === currentIndex"
+    >
+      <img [src]="img.src" [alt]="img.alt" class="slide-image">
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="vision-content">
+    <h1 class="vision-title">Our Vision</h1>
+    <p class="vision-subtitle">Building a Legacy of Faith & Devotion</p>
+    
+    <div class="nav-buttons">
+      <button (click)="prevSlide(); stopAutoPlay()">&#10094;</button>
+      <button (click)="nextSlide(); stopAutoPlay()">&#10095;</button>
+    </div>
+  </div>
+
+</section>
+
+<section class="details-section">
+  
+  <div class="container split-layout">
+    <div class="text-column">
+      <h2 class="section-title">A Divine Transformation</h2>
+        <p class="section-desc">
+        The redevelopment envisions a sacred yet contemporary space where devotees can perform Abhishek and rituals with reverence, preserving spiritual traditions while adapting to the needs of a growing urban community.
+        </p>
+        
+        <p class="section-desc">
+        Devotees celebrating special occasions are requested to share their full name and Gotra with the Mandir Guruji, ensuring rituals are conducted with authenticity, precision, and adherence to Vedic customs.
+        </p>
+        
+        <p class="section-desc">
+        The project also integrates social responsibility, allowing devotees to support charitable organizations in remembrance of loved ones, extending spiritual devotion into meaningful contributions toward community welfare.
+        </p>
+      
+      <div class="arrow-container">
+        <span class="read-more-text">VIEW PLANS</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="image-column">
+      <div class="image-wrapper">
+        <img src="/temple/2.webp" alt="Renovation Plan" class="feature-image">
+      </div>
+    </div>
+  </div>
+
+  <div class="container split-layout reverse-row">
+    
+    <div class="image-column">
+      <div class="image-wrapper">
+        <img src="/temple/1.webp" alt="Temple Architecture" class="feature-image">
+      </div>
+    </div>
+
+    <div class="text-column">
+        <p class="section-desc">
+        The proposed development stands on a plot area of approximately 600 square meters (6,000 sq. ft.) with an FSI of 1.00, optimizing vertical space while maintaining sanctity and architectural harmony.
+        </p>
+        
+        <p class="section-desc">
+        The total construction area is estimated at 15,000 sq. ft., including podium and service areas, carefully planned to balance religious functions, accessibility, and modern infrastructural requirements.
+        </p>
+        
+        <p class="section-desc">
+        The overall project cost is estimated at ₹8.5 crores, including ₹3 crores for construction, ₹1 crore for overheads, and ₹4.5 crores toward land valuation and associated expenses.
+        </p>
+      
+      <div class="arrow-container">
+        <span class="read-more-text">LEARN MORE</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="contribution-section">
+  <div class="container vertical-layout">
+    
+    <div class="contrib-header">
+      <div class="icon-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-coins">
+          <path d="M11 15h2a2 2 0 1 0 0-4h-3c-2 0-3 .5-3 2.5V15h8.5c1.1 0 2.1-.5 2.5-1.5L20 8.5"/>
+          <path d="m10.3 21 1.6-8"/>
+          <circle cx="8" cy="8" r="3"/>
+        </svg>
+      </div>
+      <h2 class="contrib-title">Other Spiritual Seva</h2>
+      <p class="contrib-subtitle">Your support helps us maintain the sanctity and daily operations of the Mandir.</p>
+    </div>
+
+    <div class="rates-grid">
+      <div class="rate-card" *ngFor="let rate of contributionRates">
+        
+        <div class="rate-content">
+          <h3 class="rate-service">{{ rate.service }}</h3>
+          <p class="rate-desc">{{ rate.description }}</p>
+        </div>
+        
+        <div class="rate-footer">
+          <div class="divider"></div>
+          <span class="rate-amount">{{ rate.amount }}</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
