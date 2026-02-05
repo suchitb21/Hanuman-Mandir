@@ -1,56 +1,58 @@
 import { Component } from '@angular/core';
-import { CommonModule , NgOptimizedImage} from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-mahashivratri',
-  imports: [CommonModule,NgOptimizedImage],
+  standalone: true,
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './mahashivratri.html',
   styleUrl: './mahashivratri.css',
 })
 export class Mahashivratri {
   // --- SECTION 1: MAIN HERO DATA ---
   festivalData = {
-    title: 'Hanuman Jayanti',
-    subtitle: 'Celebrating Strength & Devotion',
+    title: 'Maha Shivratri',
+    subtitle: 'The Great Night of Shiva',
     description: [
-      "Hanuman Jayanti is a Hindu festival that celebrates the birth of the Hindu deity, and one of the protagonists of the Ramayana, Hanuman. The festival is celebrated on different days in different parts of India.",
-      "Devotees visit temples to seek protection and blessings. It is believed that worshiping Lord Hanuman on this day liberates believers from fear and negativity."
+      "Maha Shivratri is one of the most significant Hindu festivals, celebrated annually in honor of Lord Shiva. Unlike other festivals of mirth, this is a night of introspection, fasting, and meditation on Shiva—the transformer and destroyer of darkness.",
+      "Devotees observe a strict fast and perform the 'Rudra Abhishekam' throughout the night (Jagaran), believing that sincere worship on this auspicious night washes away sins and liberates the soul from the cycle of birth and death."
     ],
-    image: '/festivals/hj/19.webp', 
-    imageAlt: 'Hanuman Jayanti Celebration'
+    // Updated path to match your likely folder structure
+    image: '/festivals/msr/2.webp', 
+    imageAlt: 'Lord Shiva Maha Shivratri Celebration'
   };
 
-  // --- SECTION 2: CARDS DATA (New) ---
+  // --- SECTION 2: CARDS DATA ---
   cardsData = [
     {
-      title: 'Morning Aarti',
-      text: 'Join us for the divine morning prayers to start your day with blessings and positivity.',
-      image: '/festivals/hj/2.webp'
+      title: 'Rudra Abhishekam',
+      text: 'Participate in the continuous pouring of milk, honey, and water on the Shiva Lingam accompanied by Vedic chants.',
+      image: '/festivals/msr/7.webp'
     },
     {
-      title: 'Special Pooja',
-      text: 'Participate in the special Archana and Abhishekam performed by our head priests.',
-      image: '/festivals/hj/12.webp'
+      title: 'Night Jagaran',
+      text: 'Join the devotees in an all-night vigil, staying awake with prayers, meditation, and spiritual energy.',
+      image: '/festivals/msr/3.webp'
     },
     {
-      title: 'Evening Darshan',
-      text: 'Experience the serene atmosphere during the evening lights and community chanting.',
-      image: '/festivals/hj/16.webp'
+      title: 'Maha Aarti',
+      text: 'Witness the grand Aarti performed at midnight, illuminating the temple with divine light and sound.',
+      image: '/festivals/msr/4.webp'
     },
     {
-      title: 'Morning Aarti',
-      text: 'Join us for the divine morning prayers to start your day with blessings and positivity.',
-      image: '/festivals/hj/10.webp' 
+      title: 'Om Namah Shivaya',
+      text: 'Immerse yourself in the continuous chanting of the Panchakshara Mantra to purify the mind and soul.',
+      image: '/festivals/msr/5.webp' 
     },
     {
-      title: 'Special Pooja',
-      text: 'Participate in the special Archana and Abhishekam performed by our head priests.',
-      image: '/festivals/hj/8.webp'
+      title: 'Bilva Patra Offering',
+      text: 'Offer the sacred Bilva leaves to Lord Shiva, a gesture believed to bestow immense spiritual merit.',
+      image: '/festivals/msr/6.webp'
     },
     {
-      title: 'Evening Darshan',
-      text: 'Experience the serene atmosphere during the evening lights and community chanting.',
-      image: '/festivals/hj/4.webp'
+      title: 'Palkhi Procession',
+      text: 'Join the grand procession of the Utsav Murti celebrating the divine marriage of Shiva and Parvati.',
+      image: '/festivals/msr/1.webp'
     }
   ];
 }
