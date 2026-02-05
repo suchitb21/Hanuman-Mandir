@@ -1,56 +1,58 @@
 import { Component } from '@angular/core';
-import { CommonModule , NgOptimizedImage} from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-navratri',
-  imports: [CommonModule,NgOptimizedImage],
+  standalone: true,
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './navratri.html',
   styleUrl: './navratri.css',
 })
 export class Navratri {
   // --- SECTION 1: MAIN HERO DATA ---
   festivalData = {
-    title: 'Hanuman Jayanti',
-    subtitle: 'Celebrating Strength & Devotion',
+    title: 'Shardiya Navratri',
+    subtitle: 'Nine Nights of Devotion & Shakti',
     description: [
-      "Hanuman Jayanti is a Hindu festival that celebrates the birth of the Hindu deity, and one of the protagonists of the Ramayana, Hanuman. The festival is celebrated on different days in different parts of India.",
-      "Devotees visit temples to seek protection and blessings. It is believed that worshiping Lord Hanuman on this day liberates believers from fear and negativity."
+      "Navratri is a vibrant nine-night festival dedicated to the worship of Goddess Durga and her nine forms (Navadurga). It symbolizes the victory of good over evil, marking the defeat of the demon Mahishasura.",
+      "The temple comes alive with colorful decorations, daily Homas, and the rhythmic beats of Garba and Dandiya Raas performed by devotees in honor of the Divine Mother."
     ],
-    image: '/festivals/hj/19.webp', 
-    imageAlt: 'Hanuman Jayanti Celebration'
+    // Assuming your folder is named 'navratri' or 'n'. Adjust if needed.
+    image: '/festivals/nr/1.webp', 
+    imageAlt: 'Goddess Durga Navratri Celebration'
   };
 
-  // --- SECTION 2: CARDS DATA (New) ---
+  // --- SECTION 2: CARDS DATA ---
   cardsData = [
     {
-      title: 'Morning Aarti',
-      text: 'Join us for the divine morning prayers to start your day with blessings and positivity.',
-      image: '/festivals/hj/2.webp'
+      title: 'Ghatasthapana',
+      text: 'The auspicious invocation of Goddess Shakti marked by the installation of the Kalash on the first day.',
+      image: '/festivals/nr/2.webp'
     },
     {
-      title: 'Special Pooja',
-      text: 'Participate in the special Archana and Abhishekam performed by our head priests.',
-      image: '/festivals/hj/12.webp'
+      title: 'Garba & Dandiya',
+      text: 'Join the community for joyous traditional dance evenings celebrating the rhythm of life and devotion.',
+      image: '/festivals/nr/5.webp'
     },
     {
-      title: 'Evening Darshan',
-      text: 'Experience the serene atmosphere during the evening lights and community chanting.',
-      image: '/festivals/hj/16.webp'
+      title: 'Maha Ashtami Homa',
+      text: 'Participate in the grand Havan performed on the eighth day to invoke prosperity and peace.',
+      image: '/festivals/nr/8.webp'
     },
     {
-      title: 'Morning Aarti',
-      text: 'Join us for the divine morning prayers to start your day with blessings and positivity.',
-      image: '/festivals/hj/10.webp' 
+      title: 'Kanya Pujan',
+      text: 'Worshipping young girls as representations of the Divine Mother on the auspicious day of Navami.',
+      image: '/festivals/nr/17.webp' 
     },
     {
-      title: 'Special Pooja',
-      text: 'Participate in the special Archana and Abhishekam performed by our head priests.',
-      image: '/festivals/hj/8.webp'
+      title: 'Daily Alankaram',
+      text: 'Witness the Goddess adorned in a new divine form (Avatar) on each of the nine nights.',
+      image: '/festivals/nr/12.webp'
     },
     {
-      title: 'Evening Darshan',
-      text: 'Experience the serene atmosphere during the evening lights and community chanting.',
-      image: '/festivals/hj/4.webp'
+      title: 'Vijaya Dashami',
+      text: 'Celebrating the final victory on the tenth day (Dussehra) with special prayers and Simollanghan.',
+      image: '/festivals/nr/15.webp'
     }
   ];
 }
