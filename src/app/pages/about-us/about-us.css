@@ -1,0 +1,344 @@
+/* ======================================================
+   GLOBAL VARIABLES & HOST STYLES
+   ====================================================== */
+:host {
+  display: block;
+  
+  /* --- COLORS --- */
+  --primary-text: #362416;       /* Deep Brown */
+  --bg-beige: beige;             /* Background Color */
+  
+  /* --- FONTS --- */
+  --font-title: 'Great Vibes', cursive;
+  --font-body: 'Inter', sans-serif;
+
+  /* --- DIMENSIONS --- */
+  --navbar-height: 76px;         /* Height of your fixed navbar */
+}
+
+/* ======================================================
+   MAIN SECTION CONTAINER
+   ====================================================== */
+.details-section {
+  background-color: var(--bg-beige);
+  color: var(--primary-text);
+  width: 100%;
+  min-height: 100vh;
+  
+  /* PADDING STRATEGY: 
+     Top = 6rem (Standard spacing) + 76px (Navbar offset) 
+     Bottom = 6rem
+     Sides = 1rem (for mobile safety) */
+  padding: calc(6rem + var(--navbar-height)) 1rem 6rem 1rem;
+  
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 8rem; /* Vertical Space between the two content rows */
+}
+
+/* ======================================================
+   LAYOUT GRID (ZIG-ZAG)
+   ====================================================== */
+.container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.split-layout {
+  display: flex;
+  flex-direction: row; /* Aligns text and image side-by-side */
+  align-items: center;
+  gap: 5rem; 
+}
+
+/* --- TEXT COLUMN --- */
+.text-column {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* --- IMAGE COLUMN --- */
+.image-column {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================================================
+   TYPOGRAPHY
+   ====================================================== */
+.section-title {
+  font-family: var(--font-title);
+  font-size: 5rem; 
+  color: var(--primary-text);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--primary-text); /* Ensures text matches the requested brown */
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 95%;
+  opacity: 0.9; /* Slight soften for readability */
+}
+
+/* ======================================================
+   INTERACTIVE ELEMENTS (LINKS/ARROWS)
+   ====================================================== */
+.arrow-container {
+  color: var(--primary-text);
+  display: flex;       
+  align-items: center; 
+  gap: 1rem;           
+  cursor: pointer;     
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.arrow-container:hover {
+  transform: translateX(10px); /* Subtle slide effect */
+}
+
+.read-more-text {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   IMAGE STYLING
+   ====================================================== */
+.image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  height: 500px; 
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(54, 36, 22, 0.15); /* Soft brown shadow */
+  transition: transform 0.5s ease;
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* Zoom effect on hover */
+.image-wrapper:hover .feature-image {
+  transform: scale(1.05); 
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN (MOBILE/TABLET)
+   ====================================================== */
+@media (max-width: 900px) {
+  
+  .details-section {
+    gap: 5rem;
+    padding: calc(4rem + var(--navbar-height)) 1rem 4rem 1rem; /* Adjust padding for mobile */
+  }
+
+  /* Stack layout vertically on mobile */
+  .split-layout {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  /* Center text for better mobile readability */
+  .text-column {
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 3rem; /* Smaller title on mobile */
+  }
+  
+  .image-wrapper {
+    height: 350px; /* Reduced height for smaller screens */
+    width: 100%;
+  }
+}
+
+/* ... KEEP ALL YOUR EXISTING CSS ABOVE ... */
+
+/* ======================================================
+   MENTOR SECTION (New Dark Section)
+   ====================================================== */
+.mentor-section {
+  /* INVERTED COLORS: Dark Background, Light Text */
+  background-color: var(--primary-text); 
+  color: var(--bg-beige);
+  
+  width: 100%;
+  padding: 6rem 1rem; /* Standard vertical spacing */
+  
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Typography Overrides for Dark Background --- */
+
+/* Force Title to be Beige */
+.mentor-title {
+  color: var(--bg-beige) !important;
+}
+
+/* Force Description to be Beige with slight transparency */
+.mentor-desc {
+  color: rgba(245, 245, 220, 0.9) !important;
+}
+
+/* Force Link/Arrow to be Beige */
+.mentor-arrow {
+  color: var(--bg-beige) !important;
+}
+
+.mentor-arrow:hover {
+  opacity: 0.8; /* Slight dim on hover instead of color shift */
+}
+
+/* --- Mentor Image Specifics --- */
+/* Optional: stylistic tweaks if you want the mentor image to look different */
+.mentor-image {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Darker shadow for depth on dark bg */
+  border: 2px solid rgba(245, 245, 220, 0.1); /* Subtle beige border */
+}
+
+/* ======================================================
+   RESPONSIVE TWEAKS (Ensures it stacks like others)
+   ====================================================== */
+@media (max-width: 900px) {
+  .mentor-section {
+    padding: 4rem 1rem;
+  }
+  
+  /* The global .split-layout media query will handle the stacking, 
+     but we ensure the background spans full width */
+}
+
+/* ... KEEP ALL EXISTING CSS ABOVE ... */
+
+/* ======================================================
+   TRUSTEES SECTION STYLES
+   ====================================================== */
+.trustees-section {
+  background-color: var(--bg-beige); /* Section is Beige */
+  color: var(--primary-text);
+  padding: 6rem 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Utility for vertically stacked, centered content */
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.trustees-title {
+  margin-bottom: 1rem;
+}
+
+.trustees-desc {
+  max-width: 700px;
+  margin-bottom: 4rem; /* Space between description and grid */
+}
+
+/* --- GRID LAYOUT --- */
+.trustees-grid {
+  display: grid;
+  /* Responsive columns: Creates as many columns as fit, with a minimum width of 260px per card */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.5rem; /* Space between cards */
+  width: 100%;
+}
+
+/* --- CARD STYLES (Dark Brown background) --- */
+.trustee-card {
+  background-color: var(--primary-text); /* Dark Brown Card */
+  border-radius: 20px;
+  overflow: hidden; /* Clip image corners */
+  box-shadow: 0 15px 35px rgba(54, 36, 22, 0.2);
+  transition: all 0.3s ease;
+  height: 420px; /* Fixed height ensures uniform look */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect for card */
+.trustee-card:hover {
+  transform: translateY(-10px); /* Lift up */
+  box-shadow: 0 25px 50px rgba(54, 36, 22, 0.3);
+}
+
+/* --- 70% IMAGE CONTAINER --- */
+.trustee-image-container {
+  flex: 7; /* Takes up 70% of available height (7 out of 10 parts) */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.trustee-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills container while maintaining aspect ratio */
+  object-position: top center; /* Focus on faces */
+  transition: transform 0.5s ease;
+}
+
+.trustee-card:hover .trustee-image {
+  transform: scale(1.05); /* Subtle image zoom on hover */
+}
+
+/* --- 30% INFO CONTAINER (Beige Text) --- */
+.trustee-info {
+  flex: 3; /* Takes up 30% of available height (3 out of 10 parts) */
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center; /* Vertically center the name */
+  justify-content: center; /* Horizontally center the name */
+  background-color: var(--primary-text); /* Ensures dark background */
+  border-top: 2px solid rgba(245, 245, 220, 0.1); /* Subtle separator line */
+}
+
+.trustee-name {
+  font-family: var(--font-body);
+  color: var(--bg-beige); /* Beige Text */
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* --- RESPONSIVE REFINEMENTS --- */
+@media (max-width: 600px) {
+  /* On small screens, make cards full width and slightly shorter */
+  .trustees-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .trustee-card {
+    height: 380px; 
+  }
+}

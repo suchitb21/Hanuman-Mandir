@@ -1,0 +1,116 @@
+<section class="details-section">
+  
+  <div class="container split-layout">
+    <div class="text-column">
+      <h2 class="section-title">Our History</h2>
+        <p class="section-desc">Tilaknagar emerged as a housing colony in 1954, when MHADA envisioned dignified homes for Mumbai’s working class. Life then was governed by strict rules, even simple home modifications required permission. Yet, amidst these limitations, residents nurtured a shared desire for spiritual comfort, unity, and a sacred space they could call their own.</p>
+
+        <p class="section-desc">Driven by faith and perseverance, a group of respected seniors took responsibility for building a Mandir within the colony. Despite resistance, legal hurdles, and repeated demolition attempts under police supervision, the community stood united. Their unwavering belief in Lord Hanuman transformed struggle into strength and preserved the Mandir’s sanctity.</p>
+
+        <p class="section-desc">Today, this Mandir stands as one of Tilaknagar’s oldest and most revered spiritual landmarks. Its enduring presence reflects the deep faith of countless devotees who find peace, hope, and emotional grounding here. The Mandir has grown not just in structure, but in hearts, devotion, and collective belonging.</p>
+      
+      <div class="arrow-container">
+        <span class="read-more-text">VIEW PLANS</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="image-column">
+      <div class="image-wrapper">
+        <img src="/temple/2.webp" alt="Renovation Plan" class="feature-image">
+      </div>
+    </div>
+  </div>
+
+  <div class="container split-layout">
+    
+    <div class="image-column">
+      <div class="image-wrapper">
+        <img src="/temple/1.webp" alt="Temple Architecture" class="feature-image">
+      </div>
+    </div>
+
+    <div class="text-column">
+
+        <p class="section-desc">The Mandir houses shrines of Lord Hanuman, Lord Ganapati, Lord Shankar, Maa Parvati, Lord Dattaguru, and Maa Shitaladevi. Daily pujas, special rituals, Abhisheks, and Laghurudras are conducted with utmost adherence to tradition. Devotees are lovingly guided for individual worship needs.</p>
+
+        <p class="section-desc">Major festivals such as Mahashivratri, Hanuman Jayanti, and Shardiya Navratri are celebrated with great enthusiasm. Events include mass Laghurudra, palkhi processions, bhajans, cultural programs, Garba, Jagrata, and community favorites like the Tilaknagar Home Minister, creating joy for all generations.</p>
+
+        <p class="section-desc">Beyond devotion, the Mandir actively serves society through satsangs, Baal Sanskaar, and initiatives like the Renuka Vadhuwar Mandal, offering marriage support and free counseling. With humility and openness, we welcome suggestions from all devotees as we strive together to enhance spiritual and social service.</p>
+      
+      <div class="arrow-container">
+        <span class="read-more-text">LEARN MORE</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="mentor-section">
+  <div class="container split-layout">
+    
+    <div class="image-column">
+      <div class="image-wrapper mentor-image">
+        <img src="/temple/mentor.webp" alt="Our Mentor" class="feature-image">
+      </div>
+    </div>
+
+    <div class="text-column">
+      <h2 class="section-title mentor-title">Our Mentor</h2>
+      
+      <p class="section-desc mentor-desc">
+        With over three decades of spiritual dedication and community leadership, our mentor has been the guiding light behind the Mandir’s transformation. His vision goes beyond architectural development; he believes in building a sanctuary where tradition meets modern compassion.
+      </p>
+
+      <p class="section-desc mentor-desc">
+        Under his stewardship, the Mandir has evolved from a small community shrine into a center for social welfare, education, and cultural preservation. His philosophy is simple: true service to God is service to humanity.
+      </p>
+
+      <div class="arrow-container mentor-arrow">
+        <span class="read-more-text">READ MESSAGE</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="trustees-section">
+  <div class="container vertical-layout">
+    
+    <h2 class="section-title trustees-title">Board of Trustees</h2>
+    <p class="section-desc trustees-desc">
+      Guiding the vision and preserving the legacy with unwavering dedication and service.
+    </p>
+
+    <div class="trustees-grid">
+      
+      <div class="trustee-card" *ngFor="let trustee of trustees">
+        
+        <div class="trustee-image-container">
+          <img [src]="trustee.imageUrl" [alt]="trustee.name" class="trustee-image">
+        </div>
+        
+        <div class="trustee-info">
+          <h3 class="trustee-name">{{ trustee.name }}</h3>
+        </div>
+
+      </div>
+      </div>
+
+  </div>
+</section>
