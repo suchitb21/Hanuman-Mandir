@@ -39,17 +39,13 @@ export class Navbar implements OnInit {
         { label: 'MEDICAL CAMPS', route: '/services/mc' }
       ]
     },
+    
     { label: 'TEMPLE RENOVATION', route: '/temple' },
+
     { label: 'SEVA', route: '/seva' },
-    { 
-      label: 'ABOUT US', 
-      route: '/about-us',
-      children: [
-        { label: 'HANUMAN MANDIR', route: '/about-us/history' },
-        { label: 'TRUSTEES', route: '/about-us/committee' },
-        { label: 'CONTACT', route: '/about-us/contact' }
-      ]
-    }
+
+    { label: 'ABOUT US', route: '/about-us'},
+
   ];
 
   constructor(private router: Router) {}
