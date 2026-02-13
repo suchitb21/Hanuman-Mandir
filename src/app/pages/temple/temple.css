@@ -414,3 +414,173 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ======================================================
+   PAYMENT DETAILS SECTION STYLES
+   ====================================================== */
+
+/* --- Section Variables used locally --- */
+.payment-details-section {
+  --payment-border: #362416;   /* The requested dark border color */
+  --payment-text: #362416;     /* The requested text color */
+  --payment-bg-outer: #f5f5dc; /* The outer beige background */
+  /* A slightly lighter beige for the box itself for elegance */
+  --payment-bg-inner: beige; 
+}
+
+/* Outer section container */
+.payment-details-section {
+  background-color: var(--payment-bg-outer);
+  padding: 5rem 1.5rem; /* Generous padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* --- The Main Payment Box --- */
+.payment-box {
+  background-color: var(--payment-bg-inner);
+  /* THE REQUESTED BORDER COLOR & THICKNESS */
+  border: 3px solid var(--payment-border); 
+  padding: 3rem;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 15px 35px rgba(54, 36, 22, 0.15); /* Soft shadow for depth */
+  color: var(--payment-text);
+}
+
+.payment-title {
+  text-align: center;
+  font-family: var(--font-title); /* Using your global title font */
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Layout: Split View (Desktop) --- */
+.payment-content {
+  display: flex;
+  gap: 4rem; /* Space between the details and QR columns */
+  align-items: center; /* Vertically center content */
+}
+
+/* --- Left Column: Details --- */
+.details-column {
+  flex: 3; /* Takes 60% of space on large screens */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Space between each detail row */
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  /* Subtle separator line between rows */
+  border-bottom: 1px solid rgba(54, 36, 22, 0.2); 
+}
+
+/* Remove border from the last row */
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-family: var(--font-body);
+  font-weight: 700; /* Bold labels */
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.detail-value {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+/* Special styling for Account Name */
+.detail-value.highlight {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* Monospace font for numbers to prevent reading errors */
+.detail-value.mono {
+  font-family: monospace; /* Falls back to system monospace */
+  letter-spacing: 1px;
+}
+
+/* --- Right Column: QR Code --- */
+.qr-column {
+  flex: 2; /* Takes 40% of space on large screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-wrapper {
+  background: #fff; /* White background ensures QR is scannable */
+  padding: 1.5rem;
+  border-radius: 16px;
+  /* Matching border for the QR container */
+  border: 3px solid var(--payment-border); 
+  box-shadow: 0 8px 20px rgba(54, 36, 22, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.qr-wrapper:hover {
+  transform: scale(1.03); /* Subtle zoom effect on hover */
+}
+
+.qr-image {
+  width: 100%;
+  max-width: 240px; /* Prevents it from being too large */
+  height: auto;
+  display: block;
+}
+
+.qr-instruction {
+  font-family: var(--font-body);
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN (MOBILE / TABLET)
+   ====================================================== */
+@media (max-width: 900px) {
+  .payment-box {
+    padding: 2rem 1.5rem; /* Reduce padding on smaller screens */
+  }
+
+  .payment-title {
+    font-size: 2.5rem;
+  }
+
+  .payment-content {
+    /* Stack vertically, put QR code on TOP for mobile */
+    flex-direction: column-reverse; 
+    gap: 3rem;
+  }
+
+  .details-column, .qr-column {
+    width: 100%;
+    flex: auto;
+  }
+
+  /* Stack labels and values vertically on small screens for better readability */
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  
+  .detail-value {
+    text-align: left;
+  }
+}

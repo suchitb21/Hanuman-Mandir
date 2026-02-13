@@ -20,21 +20,55 @@ export class AboutUs {
   trustees: Trustee[] = [
     {
       name: 'Shri Ramnath Kovind',
-      imageUrl: '/temple/trustee1.webp' // Replace with actual image path
+      imageUrl: '/trustees/2.webp' // Replace with actual image path
     },
     {
-      name: 'Smt. Draupadi Murmu',
-      imageUrl: '/temple/trustee2.webp' // Replace with actual image path
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/3.webp' // Replace with actual image path
     },
     {
-      name: 'Dr. Manmohan Singh',
-      imageUrl: '/temple/trustee3.webp' // Replace with actual image path
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/4.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Narendra Modi',
-      imageUrl: '/temple/trustee4.webp' // Replace with actual image path
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/5.webp' // Replace with actual image path
     },
-    // Example of adding a new one:
-    // { name: 'New Member Name', imageUrl: '/temple/new-member.jpg' }
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/6.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/7.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/8.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/9.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/10.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/11.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/12.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/14.webp' // Replace with actual image path
+    },
+    {
+      name: 'Shri Ramnath Kovind',
+      imageUrl: '/trustees/15.webp' // Replace with actual image path
+    },
   ];
 }
