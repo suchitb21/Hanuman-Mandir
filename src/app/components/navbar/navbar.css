@@ -98,13 +98,13 @@ nav.scrolled .nav-link:hover {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
+  background-color: beige;
   min-width: 200px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   border-radius: 8px;
   list-style: none;
   padding: 0.5rem 0;
-  border-top: 3px solid #f4c804;
+  border-top: 3px solid #362416;
 }
 
 .nav-item:hover .dropdown-menu {
@@ -125,8 +125,8 @@ nav.scrolled .nav-link:hover {
 }
 
 .dropdown-menu li a:hover {
-  background-color: #fff3e0;
-  color: #4a3b2a;
+  background-color: burlywood;
+  color: #362416;
 }
 
 /* --- CTA Button --- */
@@ -149,6 +149,7 @@ nav.scrolled .nav-link:hover {
 
 .mobile-arrow .chevron-icon {
   transition: transform 0.3s ease;
+  color: #362416;
 }
 
 .mobile-arrow.open .chevron-icon {
@@ -158,6 +159,14 @@ nav.scrolled .nav-link:hover {
 @media (max-width: 900px) {
   .desktop-only { display: none; }
   .mobile-only { display: block; }
+
+/* 1. FORCE SOLID NAVBAR (Fixes transparency issue) */
+  nav {
+    /* Always beige on mobile, regardless of scroll */
+    background-color: beige !important; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle depth */
+    color: #362416 !important; /* Force dark text color */
+  }
 
   /* Hamburger Menu Button */
   .hamburger {
@@ -173,7 +182,7 @@ nav.scrolled .nav-link:hover {
     height: 3px;
     margin: 5px auto;
     /* CHANGE 5: Hamburger bars start WHITE */
-    background-color: white; 
+    background-color: #362416; 
     transition: background-color 0.3s ease;
   }
 
@@ -208,7 +217,7 @@ nav.scrolled .nav-link:hover {
   /* 3. SUBMENU (The dropdowns like "Hanuman Jayanti") */
   .mobile-submenu {
     /* CHANGED: From light grey to a slightly darker beige for contrast */
-    background-color: #ebe5ce; 
+    background-color: beige; 
   }
 
   .mobile-submenu li a {
@@ -223,6 +232,23 @@ nav.scrolled .nav-link:hover {
   .mobile-link-header a,
   .mobile-cta {
     color: #4a3b2a !important; 
+  }
+
+.mobile-cta {
+    display: block; /* Makes it a block to accept width/margin */
+    background-color: #362416; /* Dark brown background */
+    color: white !important; /* White text */
+    text-align: center; /* Centers the text */
+    
+    /* Sizing & Spacing */
+    margin: 2rem 1.5rem 3rem 1.5rem; /* Top, Right, Bottom (extra space), Left */
+    padding: 1rem 0; /* Vertical padding for height */
+    
+    border-radius: 8px; /* Rounded corners */
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
   }
 }
 

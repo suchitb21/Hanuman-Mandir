@@ -292,7 +292,7 @@
 
 /* --- 70% IMAGE CONTAINER --- */
 .trustee-image-container {
-  flex: 7; /* Takes up 70% of available height (7 out of 10 parts) */
+  flex: 8.5; 
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -312,7 +312,7 @@
 
 /* --- 30% INFO CONTAINER (Beige Text) --- */
 .trustee-info {
-  flex: 3; /* Takes up 30% of available height (3 out of 10 parts) */
+  flex: 1.5; /* Takes up 15% of available height (1.5 out of 10 parts) */
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center; /* Vertically center the name */
@@ -342,3 +342,4 @@
     height: 380px; 
   }
 }
+
