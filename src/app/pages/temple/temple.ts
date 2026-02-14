@@ -55,8 +55,8 @@ export class Temple implements OnInit, OnDestroy {
     // --- SECTION 2 DATA (UPDATED WITH DESCRIPTIONS) ---
   contributionRates = [
     { 
-      service: 'Conribute a Stone', 
-      description: 'Be a part of the brick and stones that shape our temple.',
+      service: 'Contribute a Stone', 
+      description: 'Be a part of the brick and stone that shape our temple.',
       amount: '₹ 1000' 
     },
     { 
@@ -66,12 +66,12 @@ export class Temple implements OnInit, OnDestroy {
     },
     { 
       service: 'General Contribution', 
-      description: 'Strenghthen the foundation of faith.',
+      description: 'Strengthen the foundation of faith.',
       amount: '₹ 25,000' 
     },
     { 
       service: 'Silver Letters', 
-      description: 'Etch you name on the Silver Wall of Devotion.',
+      description: 'Etch your name on the Silver Wall of Devotion.',
       amount: '₹ 51,000' 
     },
     { 
@@ -81,8 +81,8 @@ export class Temple implements OnInit, OnDestroy {
     },
     { 
       service: 'Gangajali Yojana', 
-      description: 'Prefer smaller steps contribute monthly for a Year.',
-      amount: '₹ Any' 
+      description: 'Prefer smaller steps contribute monthly for a year.',
+      amount: '₹500/1,100/1,500' 
     }
   ];
 

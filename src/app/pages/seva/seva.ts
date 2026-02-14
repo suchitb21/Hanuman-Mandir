@@ -37,13 +37,18 @@ export class Seva {
   // --- SECTION 2 DATA (UPDATED WITH DESCRIPTIONS) ---
   contributionRates = [
     { 
-      service: 'Mandir Maintennence', 
-      description: 'Sponsor a full meal for 100 devotees visiting the Mandir.',
+      service: 'Mandir Maintenance', 
+      description: 'Contribute to the daily operations of mandir.',
       amount: '₹ 5,001' 
     },
     { 
-      service: 'Annual Prasad (Lifetime)', 
-      description: 'Perform a special ritual bathing of the deity on your behalf.',
+      service: 'Prasad (Lifetime)', 
+      description: 'On Every Hanuman Janmotsav receive a prasad from our mandir.',
+      amount: '₹ 11,000' 
+    },
+    { 
+      service: 'Prasad (Lifetime)', 
+      description: 'On Every Mahashivratri receive a prasad from our mandir.',
       amount: '₹ 11,000' 
     },
     { 
@@ -52,18 +57,18 @@ export class Seva {
       amount: '₹ 1000' 
     },
     { 
-      service: 'Daily Puja (1 year)', 
-      description: 'Support the daily cleaning, electricity, and upkeep of the premises.',
+      service: 'Daily Pooja (1 year)', 
+      description: 'Contribute to our pooja.',
       amount: '₹ 1,001' 
     },
     { 
-      service: 'Daily Puja (1 month)', 
-      description: 'Provide fodder and care for the cows in our affiliated Gaushala.',
-      amount: '₹ 1,100' 
+      service: 'Daily Pooja (1 month)', 
+      description: 'Contribute to our pooja.',
+      amount: '₹ 151' 
     },
     { 
       service: 'Lifetime Abhishek', 
-      description: 'Become a key sponsor for major festivals like Hanuman Jayanti.',
+      description: 'A one time offering for a lifetime of annual blessings.',
       amount: '₹ 5,551' 
     }
   ];
