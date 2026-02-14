@@ -19,55 +19,55 @@ export class AboutUs {
   // Use '/temple/your-image.webp' for images in your public folder.
   trustees: Trustee[] = [
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Kiran Shirwalkar',
       imageUrl: '/trustees/2.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Sanjay Sawant',
       imageUrl: '/trustees/3.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Pradeep Dicholkar',
       imageUrl: '/trustees/4.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Pravin Thakkar',
       imageUrl: '/trustees/5.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Milind Naamjoshi',
       imageUrl: '/trustees/6.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Santosh Nitore',
       imageUrl: '/trustees/7.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Mahendra Gaikwad',
       imageUrl: '/trustees/8.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Nalin Thakkar',
       imageUrl: '/trustees/9.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Uday Joshi',
       imageUrl: '/trustees/10.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Ravindra Ghag',
       imageUrl: '/trustees/11.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Sumedha Shirwalkar',
       imageUrl: '/trustees/12.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Hemant Patare',
       imageUrl: '/trustees/14.webp' // Replace with actual image path
     },
     {
-      name: 'Shri Ramnath Kovind',
+      name: 'Kailash Sangle',
       imageUrl: '/trustees/15.webp' // Replace with actual image path
     },
   ];

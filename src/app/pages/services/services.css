@@ -1,0 +1,166 @@
+/* ================= VARIABLES & HOST ================= */
+:host {
+  display: block;
+  --primary-text: #362416;       /* Dark Brown */
+  --bg-color: beige;             /* The actual named color 'beige' */
+  --font-title: 'Great Vibes', cursive;
+  --font-body: 'Inter', sans-serif;
+  --navbar-height: 76px;
+}
+
+.services-container {
+  width: 100%;
+  background-color: var(--bg-color);
+}
+
+/* ================= SECTION LAYOUT ================= */
+.service-section {
+  min-height: 100vh; /* Each section takes full view height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+  
+  /* Subtle separator between sections */
+  border-bottom: 1px solid rgba(54, 36, 22, 0.1);
+}
+
+/* Specific padding for the first section to account for Navbar */
+.first-section {
+  padding-top: calc(6rem + var(--navbar-height));
+}
+
+.content-wrapper {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ================= TYPOGRAPHY ================= */
+.service-title {
+  font-family: var(--font-title);
+  font-size: 5rem;
+  color: var(--primary-text);
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+}
+
+.description-box {
+  width: 100%;
+}
+
+.service-desc {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--primary-text);
+  line-height: 1.8;
+  text-align: justify; /* Justified text as requested */
+  white-space: pre-line; /* Preserves paragraph breaks in TS string */
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* ================= EQUIPMENT ITEMS LIST ================= */
+.items-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.item-tag {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background-color: rgba(54, 36, 22, 0.08); /* Light brown tint */
+  color: var(--primary-text);
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(54, 36, 22, 0.2);
+  font-weight: 600;
+}
+
+/* ================= CONTACT BOX ================= */
+.contact-box {
+  margin-top: 1rem;
+  background-color:#362416; /* Slight white overlay for readability */
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(54, 36, 22, 0.15);
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-label {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: beige;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contact-name {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: beige;
+}
+
+.contact-number {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: beige;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--primary-text);
+  transition: all 0.3s ease;
+}
+
+.contact-number:hover {
+  background-color: var(--primary-text);
+  color: var(--bg-color);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .service-title {
+    font-size: 3.5rem;
+  }
+  
+  .service-desc {
+    font-size: 1.1rem;
+    text-align: left; /* Justify can look weird on very small screens, sometimes left is better. Keeping Justify for now per request, but be aware. */
+    text-align-last: center; /* Centers the last line if justified */
+  }
+
+  .first-section {
+    padding-top: calc(5rem + var(--navbar-height));
+  }
+  
+  .contact-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

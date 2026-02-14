@@ -168,3 +168,66 @@ h5 {
   .nav-arrow.left { left: 0; }
   .nav-arrow.right { right: 0; }
 }
+
+
+/* ================= TICKER SECTION ================= */
+.ticker-section {
+  background-color: #362416; /* Requested Dark Brown */
+  color: #f5f5dc; /* Beige Text */
+  width: 100%;
+  overflow: hidden; /* Hides text that goes off screen */
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(245, 245, 220, 0.1); /* Subtle separator */
+  border-top: 1px solid rgba(245, 245, 220, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 70s linear infinite; /* Adjust '40s' to make it faster/slower */
+}
+
+.ticker-content {
+  display: flex;
+  flex-shrink: 0; /* Prevents shrinking */
+}
+
+.ticker-item {
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding-right: 4rem; /* Gap between repeated text */
+  display: inline-block;
+}
+
+/* Seamless Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Moves exactly one full width of content */
+  }
+}
+
+/* Pause on hover for readability (Optional) */
+.ticker-section:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .ticker-item {
+    font-size: 1rem;
+    padding-right: 2rem;
+  }
+  
+  .ticker-track {
+    animation-duration: 70s; 
+  }
+}

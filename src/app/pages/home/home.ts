@@ -14,13 +14,17 @@ interface IdolData {
   styleUrl: './home.css',
 })
 export class Home implements OnInit, OnDestroy {
+
+  announcementText: string = "|| JAY SHREE RAM || UPCOMING OCCASION: MAHASHIVRATRI - 15TH FEBRUARY 2026";
+
   idols: IdolData[] = [
     // your array unchanged
-    { src: 'logo.png', alt: 'Lord Hanuman Idol 2' },
-    { src: '/idols/ganpati.png', alt: 'Lord Hanuman Idol 2' },
-    { src: '/idols/idol_1.png', alt: 'Lord Hanuman Idol 1' },
-    { src: '/idols/idol_2.png', alt: 'Lord Hanuman Idol 2' },
-    { src: '/idols/idol_3.png', alt: 'Lord Hanuman Idol 3' },
+    { src: 'logo_webp.webp', alt: 'Idol 1' },
+    { src: '/idols/ganpati.png', alt: 'Idol 2' },
+    { src: '/idols/idol_1.png', alt: 'Idol 3' },
+    { src: '/idols/idol_2.png', alt: 'Idol 4' },
+    { src: '/idols/idol_3.png', alt: 'Idol 5' },
+    { src: '/idols/idol_4.webp', alt: 'Idol 6'}
   ];
 
   currentSlideIndex = 0;
