@@ -219,6 +219,10 @@
     color: #ffffff !important;
 }
 
+.social-btn.youtube {
+  color: #ffffff !important;
+}
+
 .social-btn svg {
   width: 20px; height: 20px;
 }
