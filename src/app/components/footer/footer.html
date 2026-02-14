@@ -60,7 +60,7 @@
         <h3 class="col-title">Quick Links</h3>
         <ul class="link-list">
           <li *ngFor="let link of quickLinks">
-            <a [routerLink]="link.route">{{ link.label }}</a>
+            <a [routerLink]="[link.route]" [fragment]="link.fragment">{{ link.label }}</a>
           </li>
         </ul>
       </div>

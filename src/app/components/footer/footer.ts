@@ -15,9 +15,9 @@ export class Footer {
 
   quickLinks = [
     { label: 'Home', route: '/' },
-    { label: 'Festival', route: '/festival' },
-    { label: 'Services', route: '/services' },
-    { label: 'Donation', route: '/donation' },
+    { label: 'Seva', route: '/seva' },
+    { label: 'Contact', route: '/contact' },
+    { label: 'Donation', route: '/temple', fragment: 'donation' },
     { label: 'About Us', route: '/about-us' }
   ];
 }
