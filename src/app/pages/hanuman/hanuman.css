@@ -172,6 +172,12 @@
   .section-heading {
     font-size: 3rem; /* Reduced from 4.5rem to fit mobile screens better */
   }
+
+  .festival-section {
+      height: auto;      /* Allows container to grow with content */
+      min-height: 100vh; /* Ensures it's at least full screen */
+      overflow: visible; /* Removes the clipping */
+    }
   
   .festival-subtitle {
     font-size: 1rem;

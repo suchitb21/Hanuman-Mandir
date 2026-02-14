@@ -1,0 +1,285 @@
+/* =====================================================
+   CONTACT US PAGE STYLES (Mandir Theme)
+   ===================================================== */
+
+:host {
+  display: block;
+
+  /* --- BRAND COLORS --- */
+  --primary-brown: #362416;       
+  --primary-brown-hover: #5d4037; 
+  
+  /* --- NEUTRALS / BACKGROUNDS --- */
+  --bg-beige: #f5f5dc;           /* Main page background */
+  --bg-white: #ffffff;           /* Card background */
+  --text-dark: #362416;          /* Primary text color */
+  --text-muted: #5d4037;         /* Secondary text color */
+  --border-color: rgba(54, 36, 22, 0.15);
+
+  /* --- FONTS --- */
+  --font-title: 'Great Vibes', cursive;
+  --font-body: 'Inter', sans-serif;
+
+  /* --- SPACING --- */
+  --section-padding: clamp(60px, 8vw, 100px);
+  --container-max: 1300px;
+  --container-padding: clamp(20px, 5vw, 60px);
+
+  /* --- SHADOWS & TRANSITIONS --- */
+  --shadow-card: 0 10px 30px rgba(54, 36, 22, 0.1);
+  --shadow-hover: 0 15px 40px rgba(54, 36, 22, 0.2);
+  --transition-base: 300ms ease;
+  
+  /* Inherit fonts */
+  font-family: var(--font-body);
+  background: var(--bg-beige);
+  color: var(--text-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
+.contact-hero {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Changed back to beige to maintain theme consistency */
+  background-color: var(--bg-beige); 
+  padding: 140px 20px 80px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Background Shapes (Darkened to be visible on beige) */
+.hero-bg-shapes {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(54, 36, 22, 0.05); /* Dark brown, low opacity */
+}
+
+.hero-shape-1 {
+  width: 500px; height: 500px; top: -250px; right: -150px;
+}
+.hero-shape-2 {
+  width: 400px; height: 400px; bottom: -200px; left: -100px;
+}
+.hero-shape-3 {
+  width: 200px; height: 200px; top: 50%; left: 10%;
+  background: rgba(54, 36, 22, 0.1); 
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: var(--font-title);
+  font-size: clamp(3.5rem, 6vw, 5.5rem); 
+  color: var(--text-dark); /* Dark text on beige background */
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--text-muted); /* Muted dark text */
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   CONTACT INFO SECTION
+   ===================================================== */
+
+.contact-info-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-beige);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Contact Cards Grid */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.contact-card {
+  padding: 32px 24px;
+  background: var(--bg-white); 
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-card:hover {
+  border-color: var(--primary-brown);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+  width: 64px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  background: var(--primary-brown); 
+  border-radius: 50%;
+  color: var(--bg-beige); 
+}
+
+.card-icon svg {
+  width: 28px; height: 28px;
+}
+
+.card-title {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.card-content {
+  display: flex; flex-direction: column; gap: 6px;
+}
+
+.card-content a, .card-content p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  line-height: 1.6;
+  transition: color var(--transition-base);
+}
+
+.card-content a:hover {
+  color: var(--primary-brown);
+  font-weight: 600;
+}
+
+/* Social Links specific */
+.social-links {
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px !important;
+}
+
+.social-btn {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--primary-brown);
+  color: var(--bg-white); /* Default icon color to beige */
+  transition: all var(--transition-base);
+}
+
+/* Force Facebook icon to be white */
+.social-btn.facebook {
+    color: #ffffff !important;
+}
+
+.social-btn.whatsapp {
+    color: #ffffff !important;
+}
+
+.social-btn.instagram {
+    color: #ffffff !important;
+}
+
+.social-btn.youtube {
+  color: #ffffff !important;
+}
+
+.social-btn svg {
+  width: 20px; height: 20px;
+}
+
+.social-btn:hover {
+  background: var(--primary-brown-hover);
+  transform: translateY(-3px);
+}
+
+.social-btn.facebook:hover {
+  background: var(--text-muted); /* Keep Facebook blue on hover if desired */
+}
+
+.social-btn.instagram:hover {
+  background: var(--text-muted);
+}
+
+.social-btn.whatsapp:hover {
+  background: var(--text-muted);
+}
+
+
+/* Map Wrapper */
+.map-wrapper {
+  height: 100%;
+  min-height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  /* Border removed as requested */
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .map-wrapper {
+    min-height: 400px;
+     /* Moves map to the top on tablets/mobiles */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    min-height: 300px;
+    padding: 120px 20px 60px;
+  }
+  .hero-title {
+    font-size: 3rem; 
+  }
+  .contact-cards {
+    grid-template-columns: 1fr; /* Stack cards */
+  }
+}

@@ -25,32 +25,32 @@ export class Navratri {
   // --- SECTION 2: CARDS DATA ---
   cardsData = [
     {
-      title: 'Ghatasthapana',
+      title: 'Devi Darshan',
       text: 'The auspicious invocation of Goddess Shakti marked by the installation of the Kalash on the first day.',
       image: '/festivals/nr/2.webp'
     },
     {
-      title: 'Garba & Dandiya',
+      title: 'Pooja',
       text: 'Join the community for joyous traditional dance evenings celebrating the rhythm of life and devotion.',
       image: '/festivals/nr/5.webp'
     },
     {
-      title: 'Maha Ashtami Homa',
+      title: 'Devotees',
       text: 'Participate in the grand Havan performed on the eighth day to invoke prosperity and peace.',
       image: '/festivals/nr/8.webp'
     },
     {
-      title: 'Kanya Pujan',
+      title: 'Navratri Event',
       text: 'Worshipping young girls as representations of the Divine Mother on the auspicious day of Navami.',
       image: '/festivals/nr/17.webp' 
     },
     {
-      title: 'Daily Alankaram',
+      title: 'Singing Event',
       text: 'Witness the Goddess adorned in a new divine form (Avatar) on each of the nine nights.',
       image: '/festivals/nr/12.webp'
     },
     {
-      title: 'Vijaya Dashami',
+      title: 'Navratri Participants',
       text: 'Celebrating the final victory on the tenth day (Dussehra) with special prayers and Simollanghan.',
       image: '/festivals/nr/15.webp'
     }

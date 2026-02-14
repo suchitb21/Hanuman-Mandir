@@ -30,15 +30,8 @@ export class Navbar implements OnInit {
         { label: 'NAVRATRI', route: '/festival/navratri'},
       ]
     },
-    { 
-      label: 'SERVICES', 
-      route: '/services',
-      children: [
-        { label: 'MEDICAL EQUIPMENTS', route: '/services/me' },
-        { label: 'MATRIMONIAL', route: '/services/mm' },
-        { label: 'MEDICAL CAMPS', route: '/services/mc' }
-      ]
-    },
+    
+    { label: 'SERVICES', route: '/services'  },
     
     { label: 'TEMPLE RENOVATION', route: '/temple' },
 

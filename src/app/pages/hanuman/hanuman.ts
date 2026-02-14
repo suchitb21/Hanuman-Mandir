@@ -11,7 +11,7 @@ import { CommonModule , NgOptimizedImage} from '@angular/common';
 export class Hanuman {
   // --- SECTION 1: MAIN HERO DATA ---
   festivalData = {
-    title: 'Hanuman Jayanti',
+    title: 'Hanuman Janmotsav',
     subtitle: 'Celebrating Strength & Devotion',
     description: [
       "Hanuman Jayanti is a Hindu festival that celebrates the birth of the Hindu deity, and one of the protagonists of the Ramayana, Hanuman. The festival is celebrated on different days in different parts of India.",
@@ -29,27 +29,27 @@ export class Hanuman {
       image: '/festivals/hj/2.webp'
     },
     {
-      title: 'Special Pooja',
+      title: 'Evening Procession',
       text: 'Participate in the special Archana and Abhishekam performed by our head priests.',
       image: '/festivals/hj/12.webp'
     },
     {
-      title: 'Evening Darshan',
+      title: 'Evening Aarti',
       text: 'Experience the serene atmosphere during the evening lights and community chanting.',
       image: '/festivals/hj/16.webp'
     },
     {
-      title: 'Morning Aarti',
+      title: 'Yuva Swaroop',
       text: 'Join us for the divine morning prayers to start your day with blessings and positivity.',
       image: '/festivals/hj/10.webp' 
     },
     {
-      title: 'Special Pooja',
+      title: 'Evening Procession',
       text: 'Participate in the special Archana and Abhishekam performed by our head priests.',
       image: '/festivals/hj/8.webp'
     },
     {
-      title: 'Evening Darshan',
+      title: 'Bhajan Keertan',
       text: 'Experience the serene atmosphere during the evening lights and community chanting.',
       image: '/festivals/hj/4.webp'
     }

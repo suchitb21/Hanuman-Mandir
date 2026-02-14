@@ -24,22 +24,22 @@ export class Ramnavami {
   // --- SECTION 2: CARDS DATA ---
   cardsData = [
     {
-      title: 'Morning Aarti',
+      title: 'Rituals',
       text: 'Join us for the divine morning prayers to start this auspicious day with blessings.',
       image: '/festivals/rn/1.webp'
     },
     {
-      title: 'Ramayana Recitation',
+      title: 'Pooja Thal',
       text: 'Participate in the Akhand Ramayan Path and listen to the divine tales of Lord Rama.',
       image: '/festivals/rn/2.webp'
     },
     {
-      title: 'Evening Darshan',
+      title: 'Special Event',
       text: 'Experience the serene atmosphere during the evening lights and Maha Aarti.',
       image: '/festivals/rn/16.webp'
     },
     {
-      title: 'Bhajan Kirtan',
+      title: 'Naivedya',
       text: 'Immerse yourself in devotional songs praising the virtues of Shri Ram.',
       image: '/festivals/rn/13.webp' 
     },

@@ -1,0 +1,33 @@
+<div class="services-container">
+  
+  <section 
+    class="service-section" 
+    *ngFor="let service of services; let i = index"
+    [class.first-section]="i === 0"
+  >
+    <div class="content-wrapper">
+      
+      <h1 class="service-title">{{ service.title }}</h1>
+      
+      <div class="description-box">
+        <p class="service-desc">{{ service.description }}</p>
+        
+        <div class="items-list" *ngIf="service.items && service.items.length > 0">
+          <span class="item-tag" *ngFor="let item of service.items">{{ item }}</span>
+        </div>
+      </div>
+
+      <div class="contact-box" *ngIf="service.contacts && service.contacts.length > 0">
+        <h3 class="contact-label">For Inquiries Contact:</h3>
+        <div class="contact-grid">
+          <div class="contact-item" *ngFor="let contact of service.contacts">
+            <span class="contact-name">{{ contact.name }}</span>
+            <a [href]="'tel:' + contact.phone" class="contact-number">{{ contact.phone }}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
